@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    color: $white;
+    background: $main-theme-color;
+    
+    & span {
+        display: none;
+    }
+
+}
+
+.burger div {
+    width: 1.7em;
+    height: .2em;
+    background-color: $white;
+    margin: .3em;
+    border-radius: .5em;
+    transition: .2s ease-in;
+}
+
+.toggle .line1 {
+transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+opacity: 0;
+}
+
+
+.toggle .line3 {
+transform: rotate(45deg) translate(-5px, -6px);
+}

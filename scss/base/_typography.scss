@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-primary;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-weight: normal;
+    text-align: center;
+    margin: .5em;
+}

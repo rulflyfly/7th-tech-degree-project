@@ -1,0 +1,27 @@
+.line-chart {
+    & .chart-nav {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+        
+        & span {
+            flex-basis: 100%;
+            margin: .5em;
+        }
+
+        & button {
+            margin: .1em;
+            padding: .5em;
+            margin-bottom: 2em;
+            background: none;
+            border: none;
+            font-size: .9em;
+        }
+
+    }
+}
+
+.chart-holder {
+    margin-bottom: 3em;
+}

@@ -1,0 +1,18 @@
+.bell {
+    width: 1.7em;
+    margin-top: .1em;
+    
+    & svg {
+        stroke: $white;
+    }
+
+    
+    &::after {
+        content: '.';
+        font-size: 4em;
+        color: $secondary-select-color;
+        position: absolute;
+        top: -.6em;
+        right: .1em;
+    }
+}
