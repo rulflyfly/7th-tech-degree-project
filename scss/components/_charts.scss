@@ -1,3 +1,11 @@
+.chart-holder {
+    margin-bottom: 3em;
+    & span {
+        display: inline-block;
+        margin-bottom: 3em;
+    }
+}
+
 .line-chart {
     & .chart-nav {
         display: flex;
@@ -22,6 +30,3 @@
     }
 }
 
-.chart-holder {
-    margin-bottom: 3em;
-}

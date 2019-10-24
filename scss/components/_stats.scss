@@ -1,0 +1,59 @@
+.head {
+        display: block;
+        max-width: 80%;
+        text-align: center;
+        margin: 0 auto 2em;
+}
+
+.twitter, 
+.facebook, 
+.google   {
+    display: flex;
+    border: 1px solid $grey;
+    padding: 1em;
+    margin: 1em auto;
+    align-items: center;
+    max-width: 90%;
+    
+    & span:first-of-type {
+        @extend %block;
+        font-weight: bold;
+        color: $main-theme-color;
+    }
+
+    & span:nth-of-type(2) {
+        @extend %block;
+        font-size: 2.5em;
+        font-family: $font-numbers;
+        font-weight: 300;
+        color: darken($grey, 25%);
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    background: $main-theme-color;
+    padding: 1.2em;
+    border-radius: 50%;
+}
+
+.twitter svg {
+    margin-top: .3em;
+}
+
+.facebook .icon {
+    padding: .6em;
+
+    & svg {
+        width: 2.7em;
+        margin-left: .4em;
+    }
+}
+
+.google svg {
+    width: 2.3em;
+    margin-left: .3em;
+    margin-top: .2em;
+}

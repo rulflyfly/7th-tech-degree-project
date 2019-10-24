@@ -1,3 +1,12 @@
+.twitter span:nth-of-type(2),
+.facebook span:nth-of-type(2),
+.google span:nth-of-type(2), .twitter span:first-of-type,
+.facebook span:first-of-type,
+.google span:first-of-type {
+  display: block;
+  margin-left: 1rem;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -403,10 +412,22 @@ header span {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.side-nav {
+  display: none;
+}
+
 .search input {
   display: block;
   margin: 1em auto;
   padding: 0.5em;
+}
+
+.chart-holder {
+  margin-bottom: 3em;
+}
+.chart-holder span {
+  display: inline-block;
+  margin-bottom: 3em;
 }
 
 .line-chart .chart-nav {
@@ -428,12 +449,129 @@ header span {
   font-size: 0.9em;
 }
 
-.chart-holder {
-  margin-bottom: 3em;
+.head {
+  display: block;
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto 2em;
+}
+
+.twitter,
+.facebook,
+.google {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin: 1em auto;
+  align-items: center;
+  max-width: 90%;
+}
+.twitter span:first-of-type,
+.facebook span:first-of-type,
+.google span:first-of-type {
+  font-weight: bold;
+  color: #7477bf;
+}
+.twitter span:nth-of-type(2),
+.facebook span:nth-of-type(2),
+.google span:nth-of-type(2) {
+  font-size: 2.5em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #8c8c8c;
+}
+
+.icon {
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  background: #7477bf;
+  padding: 1.2em;
+  border-radius: 50%;
+}
+
+.twitter svg {
+  margin-top: 0.3em;
+}
+
+.facebook .icon {
+  padding: 0.6em;
+}
+.facebook .icon svg {
+  width: 2.7em;
+  margin-left: 0.4em;
+}
+
+.google svg {
+  width: 2.3em;
+  margin-left: 0.3em;
+  margin-top: 0.2em;
 }
 
 header img {
   display: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, ".SFNSText-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #81c98f;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */
