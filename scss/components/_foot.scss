@@ -1,0 +1,95 @@
+.message {
+    span {
+        display: block;
+        max-width: 80%;
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    input:first-of-type {
+        @extend %input;
+
+        @include mq ($brk-m) {
+            width: 25rem;
+        }
+    }
+
+    textarea {
+        @extend %input;
+        height: 5em;
+
+        @include mq ($brk-m) {
+            width: 25rem;
+        }
+    }
+
+    button {
+        @extend %button;
+        width: 90%;
+        margin: 0 auto 2em;
+
+        @include mq ($brk-m) {
+            width: 25rem;
+        }
+    }
+}
+
+.settings {
+    margin: 0 auto;
+    .head {
+        display: block;
+        max-width: 80%;
+        margin: 1em auto 2em;
+        text-align: center;
+    }
+
+    .send, .set {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+        padding: .5em;
+    }
+
+    @include mq ($brk-m) {
+        width: 25rem;
+    }
+
+}
+
+#timezone {
+    display: block;
+    width: 90%;
+    margin: 1em auto .5em;
+    padding: .5em;
+
+    @include mq ($brk-m) {
+        width: 25rem;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+
+    button {
+        @extend %button;
+        margin: .5em 0;
+        width: 50%;
+
+        @include mq ($brk-m) {
+            width: 12.5rem;
+        }
+    }
+
+    button:first-of-type {
+        margin-right: .3em;
+    }
+}
+
+.foot {
+    grid-column: 2 / 4;
+    grid-row: 6;
+}

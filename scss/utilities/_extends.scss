@@ -2,3 +2,25 @@
     display: block;
     margin-left: 1rem;
 }
+
+%overflow {
+    overflow: hidden;
+}
+
+%input {
+    display: block;
+    margin: 0 auto .5em;
+    width: 90%;
+    padding: .8em;
+    font-size: .8em;
+}
+
+%button {
+    display: block;
+    background: $main-theme-color;
+    border-radius: .2em;
+    font-size: .7em;
+    color: $white;
+    padding: 1.2em;
+    border: none;
+}

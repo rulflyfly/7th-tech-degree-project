@@ -22,13 +22,17 @@
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-        <span class='logo'><strong>Your</strong>App&trade;</span>
+        <div class="logo-wrapper">
+          <span class='logo'><strong>Your</strong>App&trade;</span>
+       </div>
+        <div class="right-side-wrapper">
+        <div class="bell-wrapper">
         <div class="bell">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-            <style type="text/css">
+            <!-- <style type="text/css">
             .st0{fill:#FFFFFF;}
-            </style>
+            </style> -->
             <g id="_x36__6_">
               <g>
                 <path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
@@ -37,16 +41,21 @@
             </g>
             </svg>
         </div>
-        <img src="images/member-1.jpg" alt="a smiling guy">
-        <span>John Sullivan</span>
+      </div>
+        <div class="user">
+          <img src="images/member-1.jpg" alt="a smiling guy">
+          <span>John Sullivan</span>
+        </div>
+      </div>
   </header>
+  <div class="wrapper">
   <div class="side-nav">
         <div class="dashboard">
             <svg version="1.1" id="Line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-              <style type="text/css">
-                .st0{fill:#FFFFFF;}
-              </style>
+              <!-- <style type="text/css">
+                .st0{fill:#ccc;}
+              </style> -->
               <g id="_x31_0_20_">
                 <g>
                   <path class="st0" d="M25,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,16.7,23.3,18,25,18z M24,14h2v2h-2V14z M25,26
@@ -63,9 +72,9 @@
         <div class="members">
             <svg version="1.1" id="Line_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                <style type="text/css">
+                <!-- <style type="text/css">
                   .st0{fill:#FFFFFF;}
-                </style>
+                </style> -->
                 <g id="_x37__17_">
                   <g>
                     <path class="st0" d="M18,16.4c1.3-1.7,2-3.9,2-6.4c0-5.5-4-10-9-10C6,0,2,4.5,2,10c0,2.4,0.8,4.6,2,6.4c-2.3,0.8-4,3-4,5.6v4
@@ -81,9 +90,9 @@
         <div class="visits">
             <svg version="1.1" id="Line_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                <style type="text/css">
+                <!-- <style type="text/css">
                   .st0{fill:#FFFFFF;}
-                </style>
+                </style> -->
                 <g id="_x35__10_">
                   <g>
                     <path class="st0" d="M14,0h-2c-1.1,0-2,0.9-2,2v28c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V2C16,0.9,15.1,0,14,0z M14,29
@@ -98,9 +107,9 @@
         <div class="settings">
             <svg version="1.1" id="Line_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                <style type="text/css">
+                <!-- <style type="text/css">
                   .st0{fill:#FFFFFF;}
-                </style>
+                </style> -->
                 <g id="_x32__16_">
                   <g>
                     <path class="st0" d="M26,24H14.9c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h1.1
@@ -118,13 +127,12 @@
         </div>
         </div>
   </div>
-  <div class="wrapper">
         <div class="search">
           <h2>Dashboard</h2>
           <input type="text" placeholder="Search">
         </div>
 
-        <section class="charts">
+
             <div class="line-chart">
                 <div class="chart-nav">
                     <span>TRAFIC</span>
@@ -133,21 +141,20 @@
                     <button class="weekly">Weekly</button>
                     <button class="monthly">Monthly</button>
                 </div>
-                <div class="chart-holder">
+                <div class="chart-holder line">
                     <canvas id='line-chart'></canvas>
                 </div>
             </div>
 
-            <div class="chart-holder">
+            <div class="chart-holder bar">
                   <span>DAILY TRAFIC</span>
                   <canvas id='bar-chart'></canvas>
             </div>
 
-            <div class="chart-holder">
+            <div class="chart-holder doughnut">
                   <span>MOBILE USERS</span>
                   <canvas id='doughnut-chart'></canvas>
             </div>
-        </section>
         <section class="social">
             <span class='head'>SOCIAL STATS</span>
             <div class="twitter">
@@ -211,7 +218,7 @@
         </section>
         <section class="people">
             <div class="new">
-               <span>NEW MEMBERS</span>
+               <span class="head">NEW MEMBERS</span>
                <div class="person">
                  <img src="images/member-1.jpg" alt="a picture of victoria">
                  <div class="info">
@@ -254,7 +261,7 @@
                     </div>
             </div>
             <div class="recent">
-                <span>RECENT ACTIVITY</span>
+                <span class="head">RECENT ACTIVITY</span>
                 <div class="person">
                   <img src="images/member-1.jpg" alt="a picture of victoria">
                   <div class="info">
@@ -285,25 +292,29 @@
                      </div>
              </div>
         </section>
-        <section>
+        <section class="foot">
           <div class="message">
             <span>MESSAGE USER</span>
             <input type="text" id="search" placeholder="Search for User">
-            <input type="textarea" placeholder="Message for User">
+            <textarea placeholder="Message for User"></textarea>
             <button>SEND</button>
           </div>
-          <div class="settions">
-            <span>SETTINGS</span>
-            <span>Send Email Notifications</span>
-            <label class="toggle">
-                <input class="toggle-checkbox" type="checkbox">
-                <div class="toggle-switch"></div>
-            </label>
-            <span>Set Profile to Public</span>
-            <label class="toggle">
-                <input class="toggle-checkbox" type="checkbox">
-                <div class="toggle-switch"></div>
+          <div class="settings">
+            <span class="head">SETTINGS</span>
+            <div class="send">
+              <span>Send Email Notifications</span>
+              <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox">
+                  <div class="toggle-switch"></div>
               </label>
+            </div>
+            <div class="set">
+              <span>Set Profile to Public</span>
+              <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox">
+                  <div class="toggle-switch"></div>
+                </label>
+            </div>
           </div>
           <select id="timezone" placeholder="Select Timezone">
               <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -348,8 +359,10 @@
               <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
           </select>
         </section>
-       <button>SAVE</button> 
-       <button>CANCEL</button>
+        <div class="buttons">
+          <button>SAVE</button> 
+          <button>CANCEL</button>
+        </div>
   </div>
   <script src="main.js"></script>
 </body>

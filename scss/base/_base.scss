@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-primary;
+    overflow-x: hidden;
+
+    @include mq ($brk-l) {
+        overflow: unset;
+    }
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    @include mq ($brk-m) {
+        width: 80%;
+    }
+
+    @include mq ($brk-l) {
+        width: unset;
+        display: grid;
+        grid-template-columns:  1fr 10fr 10fr;
+        grid-template-rows: .5fr 1.3fr 3fr 2fr 3fr 3fr;
+    }
+}
+
+h2 {
+    @extend %overflow;
+    font-weight: normal;
+    text-align: center;
+    margin: 1em;
+}
+
+span {
+    @extend %overflow;
+}
+
+div {
+    @extend %overflow;
+}

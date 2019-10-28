@@ -7,6 +7,9 @@
 }
 
 .line-chart {
+    grid-column: 2/4;
+    grid-row: 2;
+    width: 100%;
     & .chart-nav {
         display: flex;
         justify-content: center;
@@ -28,5 +31,35 @@
         }
 
     }
+
+    @include mq ($brk-l) {
+       width: 80%;
+       margin: 0 auto;
+    }
+
 }
+
+.bar, .doughnut {
+    @include mq ($brk-m) {
+        display: inline-block;
+        width: 49%;
+    }
+
+    @include mq ($brk-l) {
+        padding: 4em;
+        width: unset;
+    }
+}
+
+.bar {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.doughnut {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+
 

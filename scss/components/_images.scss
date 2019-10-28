@@ -1,3 +1,18 @@
 header img {
     display: none;
+
+    @include mq ($brk-m) {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        grid-column: 4;
+        margin-right: .7em;
+    }
+}
+
+.people img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
 }

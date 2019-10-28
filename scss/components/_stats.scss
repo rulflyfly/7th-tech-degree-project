@@ -28,6 +28,10 @@
         font-weight: 300;
         color: darken($grey, 25%);
     }
+
+    @include mq ($brk-m) {
+        max-width: 25em;
+    }
 }
 
 .icon {
@@ -56,4 +60,9 @@
     width: 2.3em;
     margin-left: .3em;
     margin-top: .2em;
+}
+
+.social {
+    grid-column: 2/4;
+    grid-row: 4;
 }

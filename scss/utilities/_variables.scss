@@ -13,3 +13,11 @@ $main-theme-color            :    rgb(116, 119, 191);
 
 $font-primary     :     'Nunito', sans-serif;
 $font-numbers     :     'Open Sans', sans-serif;
+
+//=========================================//
+//==============Break Points==============//
+//========================================//
+
+$brk-xs          :          '(min-width: 411px)';
+$brk-m           :          '(min-width: 768px)';
+$brk-l           :          '(min-width: 1025px)';

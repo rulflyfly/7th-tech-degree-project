@@ -1,0 +1,75 @@
+.people {
+    grid-column: 2/4;
+    grid-row: 5;
+    & span {
+        display: block;
+    }
+
+    &  .head {
+        margin-top: 1em;
+    }
+
+    @include mq($brk-m) {
+        display: flex;
+
+        .new, .recent {
+            width: 50%;
+            padding: 1em;
+            
+        }
+        
+    }
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+    border-bottom: 1px solid lighten($grey, 8%);
+    padding-bottom: .5em;
+
+    & .date {
+        display: none;
+    }
+
+    & .info {
+        margin-left: 1em;
+    }
+
+    & .info span,
+    & .info a  {
+        font-size: .9em;
+    }
+
+    & .info a {
+        text-decoration: none;
+        color: $main-theme-color;
+    }
+
+}
+
+.recent {
+    .person span:first-of-type {
+        font-size: .8em;
+        width: 13rem;
+
+        @include mq ($brk-xs) {
+            width: unset;
+        }
+
+        @include mq ($brk-m) {
+            width: 17em;
+            margin-right: 0;
+        }
+    }
+
+    .person span:nth-of-type(2) {
+        color: darken($grey, 10%);
+        font-size: .7em;
+        margin-top: .5em;
+
+        @include mq ($brk-m) {
+            margin-top: 0;
+        }
+    }
+}

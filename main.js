@@ -35,6 +35,7 @@ const lineChart = new Chart(ctxLine, {
         }],
     },
     options: {
+        maintainAspectRatio: false,
         legend: {
           display: false,
             },

@@ -4,6 +4,7 @@
     
     & svg {
         stroke: $white;
+        fill: $white;
     }
 
     
@@ -14,5 +15,15 @@
         position: absolute;
         top: -.6em;
         right: .1em;
+
+        @include mq ($brk-m) {
+            right: 9.5rem;
+            top: -.56em;
+         }
     }
+
+    @include mq ($brk-m) {
+        grid-column: 4;
+        width: 1.3em;
+     }
 }

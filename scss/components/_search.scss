@@ -1,5 +1,6 @@
 .search {
-   
+    grid-column: 2 / 4;
+    grid-row: 1;
     & input {
         
         display: block;
