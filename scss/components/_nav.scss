@@ -1,7 +1,7 @@
 .side-nav {
     display: none;
     grid-column: 1;
-    grid-row: 1 / 6;
+    grid-row: 1 / 7;
 
     @include mq ($brk-l) {
         display: flex;
@@ -18,14 +18,22 @@
    & .dashboard svg {
        fill: $white;
    }
+
 }
 
-.dashboard, .members,
-.settings {
-    margin: 1em .6em;
+.dashboard {
+    margin: 1em .6em .6em; 
+}
+
+.members {
+    margin: .5em .6em;
 }
 
 .visits {
-    margin: 1.5em .3em;
+    margin: .5em .8em 1.2em;
+}
+
+.settings-nav {
+    margin-left: .6em;
 }
 

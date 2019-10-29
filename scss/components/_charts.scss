@@ -55,11 +55,22 @@
 .bar {
     grid-column: 2;
     grid-row: 3;
+
+    @include mq ($brk-l) {
+        border-top: $border;
+        border-right: $border;
+        border-bottom: $border;
+    }
 }
 
 .doughnut {
     grid-column: 3;
     grid-row: 3;
+
+    @include mq ($brk-l) {
+        border-top: $border;
+        border-bottom: $border;
+    }
 }
 
 
