@@ -10,7 +10,14 @@
         width: 3.5em;
     }
 
-   
+   & svg {
+       width: 2em;
+       fill: darken($grey, 20%);
+   }
+
+   & .dashboard svg {
+       fill: $white;
+   }
 }
 
 .dashboard, .members,
@@ -21,3 +28,4 @@
 .visits {
     margin: 1.5em .3em;
 }
+

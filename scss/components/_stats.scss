@@ -32,6 +32,10 @@
     @include mq ($brk-m) {
         max-width: 25em;
     }
+    
+    @include mq ($brk-l) {
+        width: 25%;
+    }
 }
 
 .icon {
@@ -65,4 +69,13 @@
 .social {
     grid-column: 2/4;
     grid-row: 4;
+   
+    & .stats {
+        @include mq ($brk-l) {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            margin: 0 auto;
+        }
+    }
 }

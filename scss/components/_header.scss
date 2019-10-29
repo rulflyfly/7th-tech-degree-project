@@ -87,3 +87,27 @@ transform: rotate(45deg) translate(-5px, -6px);
     display: flex;
     align-items: center;
 }
+
+.burger-nav {
+    background: lighten($main-theme-color, 10%);
+    border-radius: .3em;
+    position: absolute;
+    padding: 1em;
+    top: -150%;
+    transition: 1s;
+    list-style: none;
+    
+
+    & li {
+        margin: 1em;
+        color: darken($grey, 50%);
+
+        &:first-child {
+            color: $white;
+        }
+    }
+}
+
+.nav-active {
+    top: 6%;
+}

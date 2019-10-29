@@ -3,6 +3,11 @@ const ctxBar = $('#bar-chart');
 const ctxDoughnut = $('#doughnut-chart');
 
 
+
+//==============================================//
+//==================CHARTS======================//
+//=============================================//
+
 Chart.defaults.global.elements.point.radius = 4.5;
 Chart.defaults.global.elements.point.backgroundColor = 'rgba(255, 255, 255)';
 Chart.defaults.global.elements.point.borderColor = 'rgba(115, 119, 191)';
@@ -35,6 +40,7 @@ const lineChart = new Chart(ctxLine, {
         }],
     },
     options: {
+        responsive: true,
         maintainAspectRatio: false,
         legend: {
           display: false,
@@ -217,3 +223,23 @@ const doughnutChart = new Chart(ctxDoughnut, {
  }
 })
 
+
+//==============================================//
+//=====================NAV======================//
+//=============================================//
+
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.burger-nav');
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+    nav.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+    })
+  }
+
+
+  
+  navSlide();

@@ -351,7 +351,7 @@ template {
       width: unset;
       display: grid;
       grid-template-columns: 1fr 10fr 10fr;
-      grid-template-rows: .5fr 1.3fr 3fr 2fr 3fr 3fr; } }
+      grid-template-rows: .5fr 1.5fr 2fr 1fr 3fr 3fr; } }
 
 h2 {
   font-weight: normal;
@@ -452,6 +452,23 @@ header {
   display: flex;
   align-items: center; }
 
+.burger-nav {
+  background: #9799cf;
+  border-radius: .3em;
+  position: absolute;
+  padding: 1em;
+  top: -150%;
+  transition: 1s;
+  list-style: none; }
+  .burger-nav li {
+    margin: 1em;
+    color: #4d4d4d; }
+    .burger-nav li:first-child {
+      color: white; }
+
+.nav-active {
+  top: 6%; }
+
 .side-nav {
   display: none;
   grid-column: 1;
@@ -462,6 +479,11 @@ header {
       flex-direction: column;
       background: #313369;
       width: 3.5em; } }
+  .side-nav svg {
+    width: 2em;
+    fill: #999999; }
+  .side-nav .dashboard svg {
+    fill: white; }
 
 .dashboard, .members,
 .settings {
@@ -475,8 +497,28 @@ header {
   grid-row: 1; }
   .search input {
     display: block;
-    margin: 1em auto;
+    margin: 0 auto 1em;
     padding: .5em; }
+  @media (min-width: 1025px) {
+    .search {
+      display: flex;
+      justify-content: space-between; }
+      .search input {
+        display: inline-block;
+        margin: 1.5em;
+        padding: 0 .5em;
+        height: 2em;
+        width: 30%; }
+      .search div {
+        width: 85%;
+        background: #f2f2f2;
+        height: 4em;
+        border-radius: 0 0 .2em 0;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; } }
 
 .chart-holder {
   margin-bottom: 3em; }
@@ -505,7 +547,8 @@ header {
       font-size: .9em; }
   @media (min-width: 1025px) {
     .line-chart {
-      width: 80%;
+      width: 90%;
+      height: 100%;
       margin: 0 auto; } }
 
 @media (min-width: 768px) {
@@ -557,6 +600,11 @@ header {
     .facebook,
     .google {
       max-width: 25em; } }
+  @media (min-width: 1025px) {
+    .twitter,
+    .facebook,
+    .google {
+      width: 25%; } }
 
 .icon {
   display: inline-block;
@@ -583,6 +631,12 @@ header {
 .social {
   grid-column: 2/4;
   grid-row: 4; }
+  @media (min-width: 1025px) {
+    .social .stats {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      margin: 0 auto; } }
 
 .people {
   grid-column: 2/4;
@@ -597,6 +651,10 @@ header {
       .people .new, .people .recent {
         width: 50%;
         padding: 1em; } }
+  @media (min-width: 1025px) {
+    .people {
+      width: 90%;
+      margin: 0 auto; } }
 
 .person {
   display: flex;
