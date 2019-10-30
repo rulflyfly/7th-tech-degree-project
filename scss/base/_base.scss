@@ -22,7 +22,7 @@
         width: unset;
         display: grid;
         grid-template-columns:  1fr 10fr 10fr;
-        grid-template-rows: .3fr 1fr .9fr .5fr .6fr 1fr;
+        grid-template-rows: auto 1fr .9fr .5fr .6fr 1fr;
     }
 }
 
@@ -39,4 +39,12 @@ span {
 
 div {
     @extend %overflow;
+}
+
+ul {
+    list-style-type: none;
+}
+
+:focus {
+    outline: none;
 }

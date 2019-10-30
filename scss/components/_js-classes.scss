@@ -2,3 +2,50 @@
     background: $secondary-select-color !important;
     border-radius: 1em;
 }
+
+.alert {
+    background: $main-theme-color;
+    padding: 1em;
+    width: 90%;
+    border-radius: .3em;
+    margin: 0 auto .5em;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+    
+
+    & span:first-of-type {
+        display: inline-block;
+        width: 90%;
+    }
+
+    & span:nth-of-type(2) {
+        cursor: pointer;
+    }
+
+    @include mq($brk-l) {
+        
+    }
+}
+
+.note {
+    background: $secondary-select-color;
+}
+
+.notifications {
+    grid-column: 2 / 4;
+    grid-row: 1;
+
+    @include mq ($brk-l) {
+        margin-top: 7%;
+    }
+}
+
+.display {
+    display: none;
+}
+
+.added-class:after {
+    content:none
+  }

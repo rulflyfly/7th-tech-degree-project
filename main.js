@@ -253,3 +253,125 @@ const navSlide = () => {
 $(".dropdown").change(function () {
     $(this).removeClass("place_holder");
 });
+
+
+//==============================================//
+//================NOTIFICATIONS================//
+//=============================================//
+
+const $alert = $('<div></div>');
+const $note = $('<div><div>');
+const $noteTwo = $('<div><div>');
+const $closeA = $('<span>x</span>');
+const $closeN = $('<span>x</span>');
+const $closeNTwo = $('<span>x</span>');
+
+$alert.addClass('alert').html('<span><strong>Alert</strong> ipsum dolor sit amet consectetur, adipisicing elit. Tempora, officiis.</span>').append($closeA);
+$note.addClass('alert note').html('<span><strong>Notification</strong> ipsum dolor sit amet consectetur, adipisicing elit. Tempora, officiis.</span>').append($closeN)
+$noteTwo.addClass('alert note').html('<span><strong>Notification</strong> onsectetur, ipsum dolor sit amet cadipisicing elit, ipsum dolor sit amet cofficiis.</span>').append($closeNTwo)
+
+$('.notifications').append($alert);
+$('.notifications').append($note);
+$('.notifications').append($noteTwo);
+$note.css('display', 'none');
+$note.css('opacity', '0');
+$noteTwo.css('display', 'none');
+$noteTwo.css('opacity', '0');
+
+$closeA.on('click', () => {
+    $alert.css('opacity', '0')
+    setTimeout(() => {
+        $alert.css('display', 'none');
+    }, 500)
+});
+
+$closeN.on('click', () => {
+    $note.css('opacity', '0');
+    setTimeout(() => {
+        $note.remove();
+    }, 500);
+});
+
+$closeNTwo.on('click', () => {
+    $noteTwo.css('opacity', '0');
+    setTimeout(() => {
+        $noteTwo.remove();
+    }, 500);
+});
+
+$('.bell').on('click', () => {
+    $note.css('display', 'flex');
+    
+    $noteTwo.css('display', 'flex');
+    
+    $('.bell').addClass('added-class');
+
+    setTimeout(() => {
+        $note.css('opacity', '1');
+        $noteTwo.css('opacity', '1');
+    }, 0);
+})
+
+//==============================================//
+//================LINECHART NAV=================//
+//=============================================//
+
+$('.chart-nav').on('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        const btn = e.target
+        $('.chart-nav button').removeClass('select');
+        $(btn).addClass('select');
+    }
+});
+
+
+//==============================================//
+//================AUTOCOMPLETE==================//
+//=============================================//
+
+$('#search').autoComplete({
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+        var matches = [];
+        for (i=0; i<choices.length; i++)
+            if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+        suggest(matches);
+    }
+});
+
+
+//==============================================//
+//================LOCAL STORAGE=================//
+//=============================================//
+
+
+$('.one').on('click', () => {
+    const checkbox = $('.one:checked').val();
+    if (checkbox === 'on') {
+        localStorage.setItem("one", "on");
+} else {
+    localStorage.removeItem('one');
+}
+});
+
+if (localStorage.getItem('one') === 'on') {
+    document.querySelector('.one').checked = true;
+} 
+
+$('.two').on('click', () => {
+    const checkbox = $('.two:checked').val();
+    if (checkbox === 'on') {
+        localStorage.setItem("two", "on");
+} else {
+    localStorage.removeItem('two');
+}
+});
+
+if (localStorage.getItem('two') === 'on') {
+    document.querySelector('.two').checked = true;
+} 
+
+
+

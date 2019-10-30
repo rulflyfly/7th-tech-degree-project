@@ -2,11 +2,13 @@
     grid-column: 2 / 4;
     grid-row: 1;
     & input {
-        
+        border: $border;
         display: block;
         margin: 0 auto 1em; 
         padding: .5em;
     }
+
+
 
     @include mq($brk-l) {
         display: flex;

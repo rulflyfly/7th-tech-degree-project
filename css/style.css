@@ -351,16 +351,25 @@ template {
       width: unset;
       display: grid;
       grid-template-columns: 1fr 10fr 10fr;
-      grid-template-rows: .3fr 1fr .9fr .5fr .6fr 1fr; } }
+      grid-template-rows: auto 1fr .9fr .5fr .6fr 1fr; } }
 
 h2 {
   font-weight: normal;
   text-align: center;
   margin: 1em; }
 
+ul {
+  list-style-type: none; }
+
+:focus {
+  outline: none; }
+
 .bell {
   width: 1.7em;
-  margin-top: .1em; }
+  margin-top: .1em;
+  transition: 1s; }
+  .bell:hover {
+    transform: scale(1.1) rotate(-5deg); }
   .bell svg {
     stroke: white;
     fill: white; }
@@ -379,6 +388,14 @@ h2 {
     .bell {
       grid-column: 4;
       width: 1.3em; } }
+
+.input {
+  position: relative; }
+  .input .fa-search {
+    position: absolute;
+    right: 25%;
+    bottom: 52%;
+    color: #ccc; }
 
 header {
   display: flex;
@@ -486,7 +503,8 @@ header {
     fill: white; }
 
 .dashboard {
-  margin: 1em .6em .6em; }
+  padding: 1em .4em .6em;
+  border-left: 0.2em solid #81c98f; }
 
 .members {
   margin: .5em .6em; }
@@ -501,6 +519,7 @@ header {
   grid-column: 2 / 4;
   grid-row: 1; }
   .search input {
+    border: 1px solid #ccc;
     display: block;
     margin: 0 auto 1em;
     padding: .5em; }
@@ -766,7 +785,7 @@ header {
       width: 25rem; } }
   @media (min-width: 1025px) {
     .settings {
-      padding-left: 5%; } }
+      padding-left: 2.5%; } }
 
 #timezone {
   display: block;
@@ -837,14 +856,6 @@ header img {
   height: 2.5em;
   border-radius: 50%; }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box; }
-
-body {
-  font-family: -apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif; }
-
 .toggle {
   cursor: pointer;
   display: inline-block; }
@@ -891,5 +902,37 @@ body {
 .select {
   background: #81c98f !important;
   border-radius: 1em; }
+
+.alert {
+  background: #7477bf;
+  padding: 1em;
+  width: 90%;
+  border-radius: .3em;
+  margin: 0 auto .5em;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  transition: 1s; }
+  .alert span:first-of-type {
+    display: inline-block;
+    width: 90%; }
+  .alert span:nth-of-type(2) {
+    cursor: pointer; }
+
+.note {
+  background: #81c98f; }
+
+.notifications {
+  grid-column: 2 / 4;
+  grid-row: 1; }
+  @media (min-width: 1025px) {
+    .notifications {
+      margin-top: 7%; } }
+
+.display {
+  display: none; }
+
+.added-class:after {
+  content: none; }
 
 /*# sourceMappingURL=style.css.map */
