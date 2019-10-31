@@ -15,6 +15,8 @@
     }
 
     textarea {
+        border-style: none;
+        border: $border;
         @extend %input;
         height: 5em;
         border-radius: .2em;
@@ -82,7 +84,8 @@
     border-color: $grey;
     background: none;
     font-size: .8em;
-
+    border-style: none;
+    border: $border;
 }
 
 .buttons {

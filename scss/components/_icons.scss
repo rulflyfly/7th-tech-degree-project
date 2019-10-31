@@ -34,12 +34,13 @@
      }
 }
 
-.input {
-    position: relative;
-    .fa-search {
-        position: absolute;
-        right: 25%;
-        bottom: 52%;
-        color: $grey;
-    }
-}
+.input input {
+    @extend %insert-icon;
+    background-image: url("../icons/icon-magnify.svg");
+  }
+
+  .recent .person {
+    @extend %insert-icon;
+    background-image: url("../icons/next.svg");
+    background-position: 98% 30%;
+  }

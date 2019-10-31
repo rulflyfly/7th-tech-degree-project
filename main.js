@@ -200,7 +200,7 @@ const barChart = new Chart(ctxBar, {
             }],
         }
     }
-})
+});
 
 const doughnutChart = new Chart(ctxDoughnut, {
     type: 'pie',
@@ -221,7 +221,7 @@ const doughnutChart = new Chart(ctxDoughnut, {
       },
    	cutoutPercentage: 40
  }
-})
+});
 
 
 //==============================================//
@@ -238,7 +238,7 @@ const navSlide = () => {
     nav.addEventListener('click', () => {
       nav.classList.toggle('nav-active');
     })
-  }
+  };
 
 
   
@@ -309,8 +309,8 @@ $('.bell').on('click', () => {
     setTimeout(() => {
         $note.css('opacity', '1');
         $noteTwo.css('opacity', '1');
-    }, 0);
-})
+    }, 200);
+});
 
 //==============================================//
 //================LINECHART NAV=================//
@@ -371,7 +371,7 @@ $('.two').on('click', () => {
 
 if (localStorage.getItem('two') === 'on') {
     document.querySelector('.two').checked = true;
-} 
+};
 
 
 

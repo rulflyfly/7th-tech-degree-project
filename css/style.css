@@ -25,6 +25,11 @@ h2, span, div {
   padding: 1.2em;
   border: none; }
 
+.input input, .recent .person {
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 98% 50%; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -389,13 +394,12 @@ ul {
       grid-column: 4;
       width: 1.3em; } }
 
-.input {
-  position: relative; }
-  .input .fa-search {
-    position: absolute;
-    right: 25%;
-    bottom: 52%;
-    color: #ccc; }
+.input input {
+  background-image: url("../icons/icon-magnify.svg"); }
+
+.recent .person {
+  background-image: url("../icons/next.svg");
+  background-position: 98% 30%; }
 
 header {
   display: flex;
@@ -709,6 +713,9 @@ header {
     display: none; }
   .person .info {
     margin-left: 1em; }
+    @media (min-width: 320px) {
+      .person .info {
+        margin-right: 2em; } }
   .person .info span, .person .info a {
     font-size: .9em; }
   .person .info a {
@@ -718,7 +725,7 @@ header {
 .recent .person span:first-of-type {
   font-size: .8em;
   width: 13rem; }
-  @media (min-width: 411px) {
+  @media (min-width: 320px) {
     .recent .person span:first-of-type {
       width: unset; } }
   @media (min-width: 768px) {
@@ -745,6 +752,8 @@ header {
   .message input:first-of-type {
     width: 25rem; } }
 .message textarea {
+  border-style: none;
+  border: 1px solid #ccc;
   height: 5em;
   border-radius: .2em;
   border-color: #ccc; }
@@ -794,7 +803,9 @@ header {
   padding: .5em;
   border-color: #ccc;
   background: none;
-  font-size: .8em; }
+  font-size: .8em;
+  border-style: none;
+  border: 1px solid #ccc; }
 
 .buttons {
   display: flex;
