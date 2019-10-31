@@ -263,6 +263,10 @@ const $alert = $('<div></div>');
 const $closeA = $('<span>x</span>');
 const $note = $('<div></div>');
 const $overlay = $('<div></div>');
+
+
+
+
 const $btn = $('<button>OK</button>')
 
 $alert.addClass('alert').html(`<span><strong>Alert</strong> 
@@ -279,12 +283,13 @@ $note.addClass('note').html(`<p>Lorem ipsum dolor sit amet
                              adipisicing elit. Ab, officia.
                              <span class="date"><small>10/30/19</small></span></p>`).append($btn);
 
-$overlay.addClass('overlay');
+                             $overlay.addClass('overlay');
 
 $('.notifications').append($alert);
 $('.wrapper').append($note);
 $('body').append($overlay);
 $overlay.css('display', 'none');
+
 
 
 $closeA.on('click', () => {

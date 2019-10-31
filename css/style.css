@@ -475,7 +475,7 @@ header {
   align-items: center; }
 
 .burger-nav {
-  z-index: 100;
+  z-index: 4;
   background: #9799cf;
   border-radius: .3em;
   position: absolute;
