@@ -260,23 +260,32 @@ $(".dropdown").change(function () {
 //=============================================//
 
 const $alert = $('<div></div>');
-const $note = $('<div><div>');
-const $noteTwo = $('<div><div>');
 const $closeA = $('<span>x</span>');
-const $closeN = $('<span>x</span>');
-const $closeNTwo = $('<span>x</span>');
+const $note = $('<div></div>');
+const $overlay = $('<div></div>');
+const $btn = $('<button>OK</button>')
 
-$alert.addClass('alert').html('<span><strong>Alert</strong> ipsum dolor sit amet consectetur, adipisicing elit. Tempora, officiis.</span>').append($closeA);
-$note.addClass('alert note').html('<span><strong>Notification</strong> ipsum dolor sit amet consectetur, adipisicing elit. Tempora, officiis.</span>').append($closeN)
-$noteTwo.addClass('alert note').html('<span><strong>Notification</strong> onsectetur, ipsum dolor sit amet cadipisicing elit, ipsum dolor sit amet cofficiis.</span>').append($closeNTwo)
+$alert.addClass('alert').html(`<span><strong>Alert</strong> 
+                               ipsum dolor sit amet consectetur, 
+                               adipisicing elit. Tempora, 
+                               officiis.</span>`)
+                               .append($closeA);
+
+$note.addClass('note').html(`<p>Lorem ipsum dolor sit amet 
+                             consectetur adipisicing elit. 
+                             Dolores, qui est quidem deserunt sed amet?
+                             <span class="date"><small>10/31/19</small></span></p>
+                             <p>Ipsum lorem sit amet consectetur 
+                             adipisicing elit. Ab, officia.
+                             <span class="date"><small>10/30/19</small></span></p>`).append($btn);
+
+$overlay.addClass('overlay');
 
 $('.notifications').append($alert);
-$('.notifications').append($note);
-$('.notifications').append($noteTwo);
-$note.css('display', 'none');
-$note.css('opacity', '0');
-$noteTwo.css('display', 'none');
-$noteTwo.css('opacity', '0');
+$('.wrapper').append($note);
+$('body').append($overlay);
+$overlay.css('display', 'none');
+
 
 $closeA.on('click', () => {
     $alert.css('opacity', '0')
@@ -285,32 +294,22 @@ $closeA.on('click', () => {
     }, 500)
 });
 
-$closeN.on('click', () => {
-    $note.css('opacity', '0');
-    setTimeout(() => {
-        $note.remove();
-    }, 500);
-});
 
-$closeNTwo.on('click', () => {
-    $noteTwo.css('opacity', '0');
-    setTimeout(() => {
-        $noteTwo.remove();
-    }, 500);
-});
 
 $('.bell').on('click', () => {
-    $note.css('display', 'flex');
-    
-    $noteTwo.css('display', 'flex');
-    
-    $('.bell').addClass('added-class');
 
-    setTimeout(() => {
-        $note.css('opacity', '1');
-        $noteTwo.css('opacity', '1');
-    }, 200);
+    $('.bell').addClass('added-class');
+    $note.addClass('note-slide');
+    $overlay.css('display', 'block');
 });
+
+$btn.on('click', () => {
+    $('.bell').removeClass('added-class');
+    $note.removeClass('note-slide');
+    $overlay.css('display', 'none');
+})
+
+
 
 //==============================================//
 //================LINECHART NAV=================//
@@ -374,4 +373,62 @@ if (localStorage.getItem('two') === 'on') {
 };
 
 
+//==============================================//
+//================USER MESSAGE==================//
+//=============================================//
+
+const $send = $('.message button');
+const $sent = $('<div></div>');
+const choices = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+
+$send.on('click', () => {
+    if ($('#search').val() === '' || $('textarea').val() === ''){
+        
+        $sent.addClass('error').html('<p>Please, fill both fields</p>')
+        $('.message').prepend($sent);
+        $sent.css('opacity', '1');
+        
+        setTimeout(() => {
+            $sent.css('opacity', '0');
+        }, 2000);
+        setTimeout(() => {
+            $sent.removeClass('error done').html('');
+        }, 3000);
+        
+    } else if ($('#search').val() && $('textarea').val()) {
+
+        for (let i = 0; i < choices.length; i++) {
+            if ($('#search').val() !== choices[i]) {
+                $sent.addClass('error').html(`<p>There's no such user</p>`)
+                $('.message').prepend($sent);
+                $sent.css('opacity', '1');
+                
+                setTimeout(() => {
+                    $sent.css('opacity', '0');
+                }, 2000);
+                setTimeout(() => {
+                    $sent.removeClass('error done').html('');
+                }, 3000);
+            } else if ($('#search').val() === choices[i]) {
+                $sent.addClass('error done').html('<p>Message sent</p>')
+                $('.message').prepend($sent);
+                
+                $sent.css('opacity', '1');
+                
+                setTimeout(() => {
+                    $sent.css('opacity', '0');
+                    $('#search').val('');
+                    $('textarea').val('');
+                }, 2000);
+                setTimeout(() => {
+                    $sent.removeClass('error done').html('');
+                }, 3000);
+                return;
+                
+            }
+        }
+
+        
+    }
+})
 
