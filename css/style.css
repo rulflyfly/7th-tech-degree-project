@@ -679,14 +679,17 @@ header {
 
 .people {
   grid-column: 2/4;
-  grid-row: 5; }
+  grid-row: 5;
+  max-width: 26em;
+  margin: 0 auto; }
   .people span {
     display: block; }
   .people .head {
     margin-top: 1em; }
   @media (min-width: 768px) {
     .people {
-      display: flex; }
+      display: flex;
+      max-width: unset; }
       .people .new, .people .recent {
         width: 100%;
         padding: 1em; } }
@@ -712,35 +715,39 @@ header {
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: .5em; }
   .person .date {
-    display: none; }
+    display: inline-block;
+    margin-left: auto;
+    font-size: .6em; }
+    @media (min-width: 1025px) {
+      .person .date {
+        font-size: .7em; } }
   .person .info {
-    margin-left: 1em; }
-    @media (min-width: 320px) {
+    margin-left: .5em;
+    font-size: .8em; }
+    @media (min-width: 1025px) {
       .person .info {
-        margin-right: 2em; } }
-  .person .info span, .person .info a {
-    font-size: .9em; }
+        margin-left: 1em; } }
   .person .info a {
     text-decoration: none;
     color: #7477bf; }
 
 .recent .person span:first-of-type {
-  font-size: .8em;
+  font-size: .9em;
   width: 13rem; }
-  @media (min-width: 320px) {
-    .recent .person span:first-of-type {
-      width: unset; } }
   @media (min-width: 768px) {
     .recent .person span:first-of-type {
       width: 17em;
       margin-right: 0; } }
 .recent .person span:nth-of-type(2) {
   color: #b3b3b3;
-  font-size: .7em;
+  font-size: .8em;
   margin-top: .5em; }
   @media (min-width: 768px) {
     .recent .person span:nth-of-type(2) {
       margin-top: 0; } }
+@media (min-width: 320px) {
+  .recent .info {
+    margin-right: 2em; } }
 
 .person:last-of-type {
   border: none; }
@@ -867,9 +874,13 @@ header img {
       margin-right: .7em; } }
 
 .people img {
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%; }
+  border-radius: 50%;
+  width: 2em;
+  height: 2em; }
+  @media (min-width: 768px) {
+    .people img {
+      width: 2.5em;
+      height: 2.5em; } }
 
 .toggle {
   cursor: pointer;

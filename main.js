@@ -235,9 +235,6 @@ const navSlide = () => {
       nav.classList.toggle('nav-active');
       burger.classList.toggle('toggle');
     });
-    nav.addEventListener('click', () => {
-      nav.classList.toggle('nav-active');
-    })
   };
 
 
@@ -377,6 +374,15 @@ if (localStorage.getItem('two') === 'on') {
     document.querySelector('.two').checked = true;
 };
 
+
+
+    $('#timezone').change(() => {
+        localStorage.setItem('select', $('#timezone').val());
+    });
+    
+    if(localStorage.getItem('select')){
+        $('#timezone').val(localStorage.getItem('select'));
+    };
 
 //==============================================//
 //================USER MESSAGE==================//

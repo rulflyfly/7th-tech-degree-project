@@ -1,6 +1,8 @@
 .people {
     grid-column: 2/4;
     grid-row: 5;
+    max-width: 26em;
+    margin: 0 auto;
     & span {
         display: block;
     }
@@ -11,6 +13,7 @@
 
     @include mq($brk-m) {
         display: flex;
+        max-width: unset;
 
         .new, .recent {
             width: 100%;
@@ -47,19 +50,22 @@
     padding-bottom: .5em;
 
     & .date {
-        display: none;
-    }
+            display: inline-block;
+            margin-left: auto;
+            font-size: .6em;
 
-    & .info {
-        margin-left: 1em;
-        @include mq ($brk-xs) {
-            margin-right: 2em;
+        @include mq ($brk-l) {
+            font-size: .7em;
         }
     }
 
-    & .info span,
-    & .info a  {
-        font-size: .9em;
+    & .info {
+        margin-left: .5em;
+        font-size: .8em;
+        @include mq ($brk-l) {
+            margin-left: 1em;
+    
+        }
     }
 
     & .info a {
@@ -72,12 +78,9 @@
 
 .recent {
     .person span:first-of-type {
-        font-size: .8em;
+        font-size: .9em;
         width: 13rem;
 
-        @include mq ($brk-xs) {
-            width: unset;
-        }
 
         @include mq ($brk-m) {
             width: 17em;
@@ -88,11 +91,17 @@
 
     .person span:nth-of-type(2) {
         color: darken($grey, 10%);
-        font-size: .7em;
+        font-size: .8em;
         margin-top: .5em;
 
         @include mq ($brk-m) {
             margin-top: 0;
+        }
+    }
+
+    & .info {
+        @include mq ($brk-xs) {
+          margin-right: 2em;
         }
     }
 
